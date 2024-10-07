@@ -342,9 +342,52 @@ body {
 
 .my-hobbies-container {
   margin-top: 24px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-line-hobbies {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  height: 1px;
+  left: 0;
+  width: 260px;
+}
+
+.right-line-hobbies {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  height: 1px;
+  right: 0;
+  width: 260px;
 }
 
 .my-hobbies {
   font-size: 16px;
   font-weight: 500;
+}
+
+.hobbies-list-container {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.section1,
+.section2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.section1 li,
+.section2 li {
+  font-size: 15px;
+  font-weight: 300;
 }
