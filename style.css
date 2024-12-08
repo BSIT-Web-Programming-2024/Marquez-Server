@@ -60,7 +60,7 @@ body {
   height: 100%;
   background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
   border-radius: 8px;
-  transition: 0.8s;
+  transition: 0.4s;
 }
 
 .navbar a:nth-child(1):hover~span {
@@ -106,7 +106,8 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  left: -1000px;
+  top: -120px;
+  opacity: 0;
 }
 
 .text {
@@ -215,7 +216,8 @@ body {
  display: flex;
  align-items: center;
  justify-content: center;
- transform: translateX(-3000px);
+ transform: translateY(-100px);
+ opacity: 0;
 }
 
 @keyframes morph {
@@ -266,10 +268,11 @@ body {
 
 .about-me-container {
   margin-top: 34px;
-  padding: 0 50px;
   display: flex;
   justify-content: space-between;
-  width: 1000px;
+  flex: 1;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .about-img-container {
@@ -362,7 +365,7 @@ body {
   background-color: rgb(255, 255, 255);
   height: 0.1px;
   left: 0;
-  width: 260px;
+  width: 320px;
 }
 
 .right-line-hobbies {
@@ -370,7 +373,7 @@ body {
   background-color: rgb(255, 255, 255);
   height: 0.1px;
   right: 0;
-  width: 260px;
+  width: 320px;
 }
 
 .my-hobbies {
@@ -411,11 +414,12 @@ body {
 .tech-used-container {
   margin-top: 60px;
   margin-bottom: 10px;
-  padding-left: 50px;
+  padding-left: 200px;
 }
 
 .tech-used {
   font-size: 20px;
+  opacity: 0;
 }
 
 .skills-grid {
@@ -424,8 +428,9 @@ body {
   column-gap: 20px;
   row-gap: 20px;
   align-items: center;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 200px;
+  padding-right: 200px;
+  opacity: 0;
 }
 
 .technology-container {
@@ -456,7 +461,7 @@ body {
 }
 
 .skill-services-container {
-  padding-left: 50px;
+  padding-left: 200px;
   margin-top: 25px;
   margin-bottom: 10px;
 }
@@ -469,8 +474,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 20px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .services {
@@ -507,8 +512,8 @@ body {
 
 .project-container {
   margin-top: 40px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .project-flex {
@@ -618,9 +623,47 @@ body {
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.about-animation {
+.about-animation,
+.skill-animation,
+.web-service,
+.game-service,
+.edit-service,
+.project-animation,
+.kapya-cafe,
+.kapya-laptop,
+.kapya-cafe-title,
+.kapya-prog-lang,
+.kapya-desc,
+.kapya-button,
+.todo-list,
+.todo-list-laptop,
+.todo-list-title,
+.todo-list-prog-lang,
+.todo-list-desc,
+.todo-list-button,
+.rock-paper-scissor,
+.rock-paper-scissor-laptop,
+.rock-paper.scissor-title,
+.rock-paper.scissor-prog-lang,
+.rock-paper-scissor-desc,
+.rock-paper-scissor-button,
+.contact-animation,
+.contact-container,
+.lets-talk,
+.contact-desc,
+.mail-sent-pic,
+.name-container,
+.contact-info-container,
+.message-container,
+.location-container,
+.contact-number-container,
+.fb-icon,
+.linkedin-icon,
+.discord-icon,
+.submit-button {
   opacity: 0;
 }
 
@@ -633,13 +676,14 @@ body {
 .contact-container {
   background-color: rgb(43, 43, 68);
   margin-top: 40px;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 200px;
+  margin-right: 200px;
   border-radius: 8px;
 
   display: flex;
   justify-content: space-between;
-  padding: 30px 60px;
+  column-gap: 30px;
+  padding: 30px 80px;
 }
 
 .contact-left {
@@ -650,7 +694,6 @@ body {
 }
 
 .lets-talk-container {
-  padding-left: 20px;
   margin-top: 10px;
   align-self: flex-start;
 }
@@ -662,7 +705,7 @@ body {
 
 .contact-desc-container {
   margin-top: 10px;
-  width: 600px;
+  width: 500px;
 }
 
 .contact-desc {
@@ -701,7 +744,7 @@ textarea::placeholder {
 .last-name,
 .email,
 .phone {
-  width: 280px;
+  width: 230px;
   height: 32px;
   border-radius: 10px;
 }
@@ -711,7 +754,7 @@ textarea::placeholder {
 }
 
 .message {
-  width: 585px;
+  width: 484px;
   height: 200px;
   border-radius: 10px;
   background-color: rgb(96, 96, 123);
@@ -743,8 +786,15 @@ textarea::placeholder {
   align-items: center;
 }
 
+.mail-sent-pic-container {
+  height: 300px;
+  width: 450px;
+  margin-bottom: 50px;
+}
+
 .mail-sent-pic {
-  height: 350px;
+  height: 100%;
+  width: 100%;
 }
 
 .location-container,
@@ -752,7 +802,7 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   column-gap: 14px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .location-icon,
@@ -766,7 +816,7 @@ textarea::placeholder {
 }
 
 .social-media-container {
-  margin-top: 50px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
