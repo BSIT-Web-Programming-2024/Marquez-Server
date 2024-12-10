@@ -1,3 +1,7 @@
+<?php
+  include("formdb.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -474,7 +478,7 @@
           </div>
 
           <div class="form-container">
-            <form action="" method="post">
+            <form action="index.php" method="post">
               <div class="name-container">
                 <input type="text" name="firstName" placeholder="First Name" class="first-name">
                 <input type="text" name="lastName" placeholder="Last Name" class="last-name">
@@ -532,3 +536,34 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+<?php
+
+  if (isset($_POST["submit"])) {
+
+    if (empty($_POST["firstName"]) || empty($_POST["lastName"]) || empty($_POST["email"]) || empty($_POST["phoneNum"]) || empty($_POST["message"])) {
+      echo "Please fill up the form.";
+    }
+    else {
+      $firstName = $_POST["firstName"];
+      $lastName = $_POST["lastName"];
+      $email = $_POST["email"];
+      $phone = $_POST["phoneNum"];
+      $message = $_POST["message"];
+
+      $sql = "INSERT INTO contacts (firstName, lastName, email, phone, message) VALUES ('$firstName', '$lastName', '$email', '$phone', '$message')";
+
+      try{
+        mysqli_query($conn, $sql);
+        echo "<script>
+              alert('Message registered. Thank you for reaching out!');
+             </script>";
+      }
+      catch(mysqli_sql_exception) {
+        echo "<script>
+              alert('Could not register message.');
+              </script>";
+      }
+    }
+  }
+?>
